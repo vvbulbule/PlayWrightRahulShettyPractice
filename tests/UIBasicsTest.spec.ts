@@ -25,6 +25,7 @@ test('First Playwright Test ', async ({ browser  }) =>
 {
     //Playwright Code
     // we don't have to close the browser it will close automatically once the execution is done 
+    // Playwright will create the 2 steps byfault when our browser context is empty like in Second Playwright Test case
    const context = await browser.newContext();
    const Page =await context.newPage();
    await Page.goto("https://rahulshettyacademy.com/loginpagePractise/")
@@ -35,7 +36,6 @@ test('First Playwright Test ', async ({ browser  }) =>
 // When we add .only after the test then it will run only that test cases from all the Test File
 // In Case of One Test File - if we have two test with only then it will execute both the test cases
 // In Case of Two Test File - if we have two test with only then it will execute both the test cases from Two Test File
-// np
 test.only('Second Playwright Test ', async ({ page  }) =>
 {
    // we don't have to close the browser it will close automatically once the execution is done 
@@ -43,7 +43,7 @@ test.only('Second Playwright Test ', async ({ page  }) =>
    // to print the page title
    console.log(await page.title())
    // Check the page title matching with expected using assersion i.e expect provided in toHaveTitle method
-   expect(page).toHaveTitle("Google");
+   await expect(page).toHaveTitle("Google");
 
 }
 );
