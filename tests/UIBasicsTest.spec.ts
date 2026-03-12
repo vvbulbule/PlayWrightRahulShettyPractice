@@ -36,7 +36,7 @@ test('First Playwright Test ', async ({ browser  }) =>
 // When we add .only after the test then it will run only that test cases from all the Test File
 // In Case of One Test File - if we have two test with only then it will execute both the test cases
 // In Case of Two Test File - if we have two test with only then it will execute both the test cases from Two Test File
-test.only('Second Playwright Test ', async ({ page  }) =>
+test('Second Playwright Test ', async ({ page  }) =>
 {
    // we don't have to close the browser it will close automatically once the execution is done 
    await page.goto("https://www.google.com/")
