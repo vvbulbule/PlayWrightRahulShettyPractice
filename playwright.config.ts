@@ -23,11 +23,11 @@ export default defineConfig({
     // Give the browser name where we want to run the test
     // In beloe way we can do the cross browser testing
     // to run in chrome
-    //browserName:'chromium'
+    browserName:'chromium',
     //to run in Firefox
     //browserName:'firefox'
     //to run in safari
-    browserName:'webkit',
+    //browserName:'webkit',
 
     // we can run the test in head or haedless mode
     // when we don't declare the below line then also we can run the test in headless mode uisng terminal command npx playwright test --headed
