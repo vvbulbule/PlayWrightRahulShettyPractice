@@ -15,7 +15,7 @@ export default defineConfig({
   expect:{
   timeout: 5000,
   },
- // Once all the test run below line gve the report in html
+ // Once all the test run below line give the report in html
  reporter:'html',
   
   use: {
