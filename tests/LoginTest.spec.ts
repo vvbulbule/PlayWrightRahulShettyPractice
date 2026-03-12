@@ -13,7 +13,7 @@ test('Login Test with Valid Credentials', async ({page})=>{
     await page.locator("#username").fill('rahulshettyacademy')//id=username
     await page.locator("[type='password']").fill('Learning@830$3mK2')//type="password"
     await page.locator("#signInBtn").click()
-    
+
 })
 
 test.only('Login Test with Incorrect username/password.', async ({page})=>{
@@ -33,6 +33,6 @@ test.only('Login Test with Incorrect username/password.', async ({page})=>{
     console.log(await page.locator("[style='display: block;']").textContent())
 
     // Using assert check the text of error message
-    await expect(await page.locator("[style='display: block;']")).toContainText("Incorrect username/password.")
+    await expect(page.locator("[style='display: block;']")).toContainText("Incorrect username/password.");
 
 })
