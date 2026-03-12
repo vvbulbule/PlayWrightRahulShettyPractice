@@ -24,6 +24,7 @@ But latest JS Versions the functions that don't have the name that can be writte
 test('First Playwright Test ', async ({ browser  }) =>
 {
     //Playwright Code
+    // we don't have to close the browser it will close automatically once the execution is done 
    const context = await browser.newContext();
    const Page =await context.newPage();
    await Page.goto("https://rahulshettyacademy.com/loginpagePractise/")
@@ -39,6 +40,10 @@ test.only('Second Playwright Test ', async ({ page  }) =>
 {
    // we don't have to close the browser it will close automatically once the execution is done 
    await page.goto("https://www.google.com/")
+   // to print the page title
+   console.log(await page.title())
+   // Check the page title matching with expected using assersion i.e expect provided in toHaveTitle method
+   expect(page).toHaveTitle("Google");
 
 }
 );
