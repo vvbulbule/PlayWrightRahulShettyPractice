@@ -43,6 +43,7 @@ test.only('Second Playwright Test ', async ({ page  }) =>
    // to print the page title
    console.log(await page.title())
    // Check the page title matching with expected using assersion i.e expect provided in toHaveTitle method
+   // it will wait for 5 sec as we mention in config file and for all other steps 40 sec that it also we mention in js config file
    await expect(page).toHaveTitle("Google");
 
 }

@@ -11,9 +11,9 @@ export default defineConfig({
   // Timeout of 40 sec to wait for perticular element
   // this time out is for every steps in playwright and components
   timeout:40 *1000,
-  // for assertion we use expect timeout
+  // for assertion validation we use expect timeout
   expect:{
-  timeout:40 *1000,
+  timeout: 5000,
   },
  // Once all the test run below line gve the report in html
  reporter:'html',
