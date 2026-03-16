@@ -1,3 +1,7 @@
+/* if the file does not contains .spec.ts at the end then So VS Code treats it as normal TypeScript file, not a test file.
+ If .spec is missing at the the end of file name → test will not run.
+So .spec is compuslsory in every playwright file and extension is ts
+*/
 
 import {test, expect} from  '@playwright/test';
 import { Assert } from 'node:assert';

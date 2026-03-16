@@ -1,7 +1,11 @@
 /*This Program is to Handle multiple webElemets having the same locator value*/
+/* if the file does not contains .spec.ts at the end then So VS Code treats it as normal TypeScript file, not a test file.
+ If .spec is missing at the the end of file name → test will not run.
+So .spec is compuslsory in every playwright file and extension is ts
+*/
 import {test, expect} from "@playwright/test"
 
-test('TC to Handle multiple webElemets having the same locator value' , async ({page})=>
+test.only('TC to Handle multiple webElemets having the same locator value' , async ({page})=>
 {
     
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
@@ -13,15 +17,15 @@ test('TC to Handle multiple webElemets having the same locator value' , async ({
     const SignInBtn = page.locator("#signInBtn")
     
     //Entered the Username "rahulshettyacademyInvalid" 
-    username.fill("rahulshettyacademyInvalid");
+    await username.fill("rahulshettyacademyInvalid");
 
     // Using fill method only we can cleared the entered text
-    username.fill("")
+    await username.fill("")
     // Now Entered the Valid Username
-    username.fill("rahulshettyacademy")
+    await username.fill("rahulshettyacademy")
     //  Entered the Valid Password
-    password.fill("Learning@830$3mK2")
-    SignInBtn.click() 
+    await password.fill("Learning@830$3mK2")
+    await SignInBtn.click() 
     
 
 })
