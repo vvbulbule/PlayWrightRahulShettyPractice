@@ -16,7 +16,7 @@ test('Login Test with Valid Credentials', async ({page})=>{
 
 })
 
-test.only('Login Test with Incorrect username/password.', async ({page})=>{
+test('Login Test with Incorrect username/password.', async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     await page.locator("#username").fill('rahulshettyacademy')//id=username
