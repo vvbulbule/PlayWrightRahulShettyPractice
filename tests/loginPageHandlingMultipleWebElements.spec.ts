@@ -25,7 +25,20 @@ test.only('TC to Handle multiple webElemets having the same locator value' , asy
     await username.fill("rahulshettyacademy")
     //  Entered the Valid Password
     await password.fill("Learning@830$3mK2")
-    await SignInBtn.click() 
-    
+    await SignInBtn.click()// After we click on signin then it will wai till page open 40 sec i.e. timeout:40 *1000 as per mention in config file
 
+    //Below element locator will match the 4 elemets on the page so it will gives the error after execution
+    // It will give the error "Error: strict mode violation: locator('.card-body a') resolved to 4 elements:"
+    //console.log(await page.locator(".card-body a").textContent())
+
+    //Now tell the playwright to take the 1st element we can use nth(0) .. Index starts from 0
+    console.log(await page.locator(".card-body a").nth(0).textContent())//iphone X
+
+    //simimarly we can use the first and last to udentify 1st and last element from the locator
+    console.log(await page.locator(".card-body a").first().textContent())//iphone X 
+    console.log(await page.locator(".card-body a").last().textContent())//Blackberry
+
+    // Apart from first and last if we want to identify other elemets then we have to use nth method only
+    // Below line will give the second element Text
+    console.log(await page.locator(".card-body a").nth(1).textContent())//Samsung Note 8
 })
