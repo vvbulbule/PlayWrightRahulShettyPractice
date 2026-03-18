@@ -26,6 +26,9 @@ test.only("Handling Radio btn and Dropdowns", async ({page})=>{
     await page.locator("#terms").click();
     //verify Checkox is checked
     await expect(page.locator("#terms")).toBeChecked()// it will verify 
+    // Uncheck the checkbox
+    await page.locator("#terms").uncheck()
+    await expect(await page.locator("#terms").isChecked()).toBeFalsy()// we can't have toBeUnChecked () so we can to use toBeFalsy
 
 
     // Click on Signin Btn
