@@ -5,7 +5,7 @@ So .spec is compuslsory in every playwright file and extension is ts
 */
 import {test, expect} from "@playwright/test"
 
-test.only('TC to Handle multiple webElemets having the same locator value' , async ({page})=>
+test("TC to Handle multiple webElemets having the same locator value" , async ({page})=>
 {
     
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/");
