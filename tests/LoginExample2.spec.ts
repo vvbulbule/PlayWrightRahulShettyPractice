@@ -1,6 +1,6 @@
-import {test, expect} from "@playwright/test"
+import {test} from "@playwright/test"
 
-test.only("Login the Website and Fetch the product Name", async({page})=>{
+test("Login the Website and Fetch All product Name", async({page})=>{
     await page.goto("https://rahulshettyacademy.com/client")
     await page.locator("#userEmail").fill("vvbulbule@gmail.com")
     await page.locator("[type='password']").fill("V12bulbule@")

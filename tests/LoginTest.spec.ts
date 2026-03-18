@@ -3,8 +3,8 @@
 So .spec is compuslsory in every playwright file and extension is ts
 */
 
-import {test, expect} from  '@playwright/test';
-import { Assert } from 'node:assert';
+import {test,expect} from  '@playwright/test';
+
 
 test('Login Test with Valid Credentials', async ({page})=>{
 

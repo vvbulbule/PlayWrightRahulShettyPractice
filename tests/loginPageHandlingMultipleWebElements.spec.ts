@@ -3,7 +3,7 @@
  If .spec is missing at the the end of file name → test will not run.
 So .spec is compuslsory in every playwright file and extension is ts
 */
-import {test, expect} from "@playwright/test"
+import {test} from "@playwright/test"
 
 test("TC to Handle multiple webElemets having the same locator value" , async ({page})=>
 {
