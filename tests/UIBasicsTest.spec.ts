@@ -17,16 +17,16 @@ File Type	  Import Style
 */
 import { test, expect } from '@playwright/test';
 
-// it takes two arguments first is TC Title and second is ACtual Test case
+// test takes two arguments first is TC Title and second is ACtual Test case
 // below is the simple test cases structure
-// This is  the formate for every test cases and inside the function braces we can wright our test cases code
+// This is the formate for every test cases and inside the function braces we can wright our test cases code
 /*In jS code will not get execute in Sequence i.e all the line of the code executed at a time that is we called is asynchronous
 So we need to tell the JS to wait until the previous steps completed So before every step we need to write the keyword await
  So we need to write the async before the function 
 test('First Playwright Test ', async function ()
 But latest JS Versions the functions that don't have the name that can be written as => sign
 */
-test('First Playwright Test ', async ({ browser  }) =>
+test.only("First Playwright Test ", async ({ browser  }) =>
 {
     //Playwright Code
     // we don't have to close the browser it will close automatically once the execution is done 
@@ -41,7 +41,7 @@ test('First Playwright Test ', async ({ browser  }) =>
 // When we add .only after the test then it will run only that test cases from all the Test File
 // In Case of One Test File - if we have two test with only then it will execute both the test cases
 // In Case of Two Test File - if we have two test with only then it will execute both the test cases from Two Test File
-test('Second Playwright Test ', async ({ page  }) =>
+test("Second Playwright Test ", async ({ page  }) =>
 {
    // we don't have to close the browser it will close automatically once the execution is done 
    await page.goto("https://www.google.com/")
