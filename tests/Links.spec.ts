@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test"
 
-test.only("Verify the Link", async ({page})=>{
+test("Verify the Link", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
 
@@ -13,6 +13,8 @@ test.only("Verify the Link", async ({page})=>{
     // we can check that the class Attribute has blinkingText Value using toHaveAttribute()
     // Here in below step action is performed inside () so await keyword comes inside only
     await expect(link).toHaveAttribute("class","blinkingText")
+
+    
 
 
 })
