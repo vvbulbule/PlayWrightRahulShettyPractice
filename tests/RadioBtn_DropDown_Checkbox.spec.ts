@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test"
 
-test.only("Handling Radio btn and Dropdowns", async ({page})=>{
+test("Handling Radio btn and Dropdowns", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     await page.locator("#username").fill("rahulshettyacademy")
@@ -25,10 +25,12 @@ test.only("Handling Radio btn and Dropdowns", async ({page})=>{
     // Click on terms and conditions checkbox
     await page.locator("#terms").click();
     //verify Checkox is checked
+    // Here in below step action is performed at last so await keyword comes first
     await expect(page.locator("#terms")).toBeChecked()// it will verify 
     // Uncheck the checkbox
     await page.locator("#terms").uncheck()
-    await expect(await page.locator("#terms").isChecked()).toBeFalsy()// we can't have toBeUnChecked () so we can to use toBeFalsy
+    // Here in below step action is performed inside () so await keyword comes inside only
+    expect(await page.locator("#terms").isChecked()).toBeFalsy()// we can't have toBeUnChecked () so we can to use toBeFalsy
 
 
     // Click on Signin Btn

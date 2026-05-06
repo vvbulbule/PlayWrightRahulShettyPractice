@@ -31,6 +31,7 @@ test.only("First Playwright Test ", async ({ browser  }) =>
     //Playwright Code
     // we don't have to close the browser it will close automatically once the execution is done 
     // Playwright will create the 2 steps byfault when our browser context is empty like in Second Playwright Test case
+    // await keyword is required for for the action step 
    const context = await browser.newContext();
    const Page =await context.newPage();
    await Page.goto("https://rahulshettyacademy.com/loginpagePractise/")
