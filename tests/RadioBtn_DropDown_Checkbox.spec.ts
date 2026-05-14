@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test"
 
-test.only("Handling Radio btn and Dropdowns", async ({page})=>{
+test("Handling Radio btn and Dropdowns", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     await page.locator("#username").fill("rahulshettyacademy")
