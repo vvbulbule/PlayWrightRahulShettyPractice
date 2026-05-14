@@ -3,10 +3,10 @@
 So .spec is compuslsory in every playwright file and extension is ts
 */
 
-import {test,expect} from  '@playwright/test';
+import {test,expect} from  "@playwright/test";
 
 
-test('Login Test with Valid Credentials', async ({page})=>{
+test.only('Login Test with Valid Credentials', async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
 
@@ -14,7 +14,7 @@ test('Login Test with Valid Credentials', async ({page})=>{
     // Playwright recommended to use the CSS to identify the elements
     // enter  the text into the editbox we can use type or fill both are same but in latest playwright type is depricated
     // Enter the rahulshettyacademy in username
-    await page.locator("#username").fill('rahulshettyacademy')//id=username
+    await page.locator("#username").fill("rahulshettyacademy")//id=username
     await page.locator("[type='password']").fill('Learning@830$3mK2')//type="password"
     await page.locator("#signInBtn").click()
 
@@ -23,7 +23,7 @@ test('Login Test with Valid Credentials', async ({page})=>{
 test('Login Test with Incorrect username/password.', async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
-    await page.locator("#username").fill('rahulshettyacademy')//id=username
+    await page.locator("#username").fill("rahulshettyacademy")//id=username
     await page.locator("[type='password']").fill('Learning')//InValid value for Password
     await page.locator("#signInBtn").click()
     // AFter clicking in signin Btn will show the message after 2 second then message will be disappear "Incorrect username/password."

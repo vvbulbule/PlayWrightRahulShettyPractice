@@ -15,7 +15,7 @@ File Type	  Import Style
 .js	          const { test } = require()
 .ts	         import { test } from
 */
-import { test, expect } from '@playwright/test';
+import { test, expect } from "@playwright/test";
 
 // test takes two arguments first is TC Title and second is ACtual Test case
 // below is the simple test cases structure
@@ -26,7 +26,7 @@ So we need to tell the JS to wait until the previous steps completed So before e
 test('First Playwright Test ', async function ()
 But latest JS Versions the functions that don't have the name that can be written as => sign
 */
-test.only("First Playwright Test ", async ({ browser  }) =>
+test("First Playwright Test ", async ({ browser  }) =>
 {
     //Playwright Code
     // we don't have to close the browser it will close automatically once the execution is done 

@@ -29,8 +29,14 @@ export default defineConfig({
     //to run in safari
     //browserName:'webkit',
 
+    // Playwright runs in headless mode by default.
     // we can run the test in head or haedless mode
-    // when we don't declare the below line then also we can run the test in headless mode uisng terminal command npx playwright test --headed
+    // As we have declare the headless:false here in config file so when we run the npx playwright test command then it will not run the test in headless mode i.e browser will  be opened
+    // As we have declare the headless:true here in config file so when we run the npx playwright test command then it will run the test in headless mode i.e browser will not be opened
+
+    /* when we don't declare the below line then also we can run the test 
+    in headed mode Uisng  terminal command npx playwright test --headed
+    in  Headless Command : npx playwright test --headless */
     headless: false
 
     

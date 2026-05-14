@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test"
 
-test.only("Verify the Link", async ({page,context})=>{
+test("Verify the Link", async ({page,context})=>{
 
        // Open main page
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")

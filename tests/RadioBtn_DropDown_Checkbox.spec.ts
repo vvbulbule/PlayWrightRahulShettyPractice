@@ -1,6 +1,6 @@
 import {test, expect} from "@playwright/test"
 
-test("Handling Radio btn and Dropdowns", async ({page})=>{
+test.only("Handling Radio btn and Dropdowns", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/loginpagePractise/")
     await page.locator("#username").fill("rahulshettyacademy")
@@ -24,6 +24,8 @@ test("Handling Radio btn and Dropdowns", async ({page})=>{
 
     // Click on terms and conditions checkbox
     await page.locator("#terms").click();
+    //// true i.e. it will just print the true if the Checkbox is selected
+    console.log(await page.locator("#terms").isChecked())// true
     //verify Checkox is checked
     // Here in below step action is performed at last so await keyword comes first
     await expect(page.locator("#terms")).toBeChecked()// it will verify 
