@@ -76,8 +76,31 @@ test.only("TC to Add the Product to Cart and place the Order", async({page})=>
             }
 
         }
-        await page.pause()
+       
+        // Verify that email comes automatically on Payment page in email textbox is same as loggedin user's email ID
+        // Here we can use the toHaveText() it will match the exact text 
+        const email= "vvbulbule@gmail.com";
+        await expect(page.locator("div label")).toContainText(email)
 
+        //Enter the CVV 
+        await page.locator(".input.txt").nth(1).fill("123")
+
+        //Enter the Name on Card 
+        await page.locator(".input.txt").nth(2).fill("Vikrant Bulbule")
+
+        
+
+        // Click on PlaceOrder btn
+        await page.locator(".btnn.action__submit.ng-star-inserted").click()
+
+        // Verify "Thankyou for the order." Message after Placing the Order
+        await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ")
+
+        // Ftech the order id on Order Page 
+        const orderID= console.log(await page.locator("label.ng-star-inserted").textContent())
+
+
+        
     }
 
 )
