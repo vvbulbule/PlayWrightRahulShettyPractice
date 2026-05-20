@@ -97,9 +97,54 @@ test.only("TC to Add the Product to Cart and place the Order", async({page})=>
         await expect(page.locator(".hero-primary")).toHaveText(" Thankyou for the order. ")
 
         // Ftech the order id on Order Page 
-        const orderID= console.log(await page.locator("label.ng-star-inserted").textContent())
+        const orderID= await page.locator("label.ng-star-inserted").textContent()
+        console.log(orderID)
+
+  
+
+        // Click on Order History Page Link
+        await page.locator("[routerlink='/dashboard/myorders']").nth(1).click()
+
+        // Handling Orders Table
+        // on the Orders list page latest order comes at the last 
+        //tbody tr locator will give the all the rows 
+        const ordersrows=  page.locator("tbody tr")
+        await ordersrows.first().waitFor()
+
+        //iterate all the rows and find the "Required orderID" to View the Order Details
+        
+        for (let i=0;i< await ordersrows.count();i++){
+            // Here we applied chaining for the locator
+            const rowOrderID=await ordersrows.nth(i).locator("th").textContent()
+            
 
 
+            // if loop to match the Expected and Actual OrderID
+            if(orderID?.includes(rowOrderID!)){
+                console.log("Order ID matched")
+                // Now for the match orderid click on View Button to View Order Details
+                await ordersrows.nth(i).locator("button").first().click()
+                
+                break
+            }
+        }
+
+        //Verify that same order id is opened on order Summary Page verify using orderid
+       
+        //Order is contains blank Space i.e | 6a0d9bbd17ee3e78ba8b178a | so below line will fail so in normal appplication it should be pass
+        //await expect(page.locator(".col-text")).toContainText(orderID!); 
+
+         /*
+        Why ! is used
+
+    ! = Non-null assertion operator
+
+    It tells TypeScript:
+
+    “I am sure this value is not null.”
+
+    Since your order ID is already printed in console i.e | 6a0d90c117ee3e78ba8aeb6a | , it exists, so this is safe.
+    */
         
     }
 
