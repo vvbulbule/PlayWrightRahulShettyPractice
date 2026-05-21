@@ -1,6 +1,6 @@
 import {expect, test} from "@playwright/test"
 
-test.only("TC to Add the Product to Cart and place the Order", async({page})=>
+test("TC to Add the Product to Cart and place the Order", async({page})=>
     {
         await page.goto("https://rahulshettyacademy.com/client/#/auth/login")
         await page.locator("#userEmail").fill("vvbulbule@gmail.com")
