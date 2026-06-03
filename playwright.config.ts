@@ -37,7 +37,10 @@ export default defineConfig({
     /* when we don't declare the below line then also we can run the test 
     in headed mode Uisng  terminal command npx playwright test --headed
     in  Headless Command : npx playwright test --headless */
-    headless: false
+    headless: false,
+    //To get the screenshots for every step in playwright Execution
+    screenshot :'on',
+    trace : 'retain-on-failure'//off,on,retain-on-failure
 
     
   },
