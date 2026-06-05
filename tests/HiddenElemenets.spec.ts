@@ -2,7 +2,7 @@
 // Hre we are checking that Elemet is Dissappears and Appears on the Page when perform some Action like Button Click 
 import {test,expect} from "@playwright/test"
 
-test.only("Handling Hidden Elements", async ({page})=>{
+test("Handling Hidden Elements", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/")
 
