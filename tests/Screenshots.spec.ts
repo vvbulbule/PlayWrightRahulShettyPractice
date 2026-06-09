@@ -1,6 +1,6 @@
 import {test,expect} from "@playwright/test"
 
-test.only("Handling Screenshots", async ({page})=>{
+test("Handling Screenshots", async ({page})=>{
 
     await page.goto("https://rahulshettyacademy.com/AutomationPractice/")
 
@@ -12,6 +12,8 @@ test.only("Handling Screenshots", async ({page})=>{
 
     // To take the Screenshots of some element Only like Button , Text
     await page.locator("#displayed-text").screenshot({path: 'textDisplayed.png'});
+
+
 
 
 })
