@@ -4,7 +4,7 @@
 
     import {test,expect} from "@playwright/test"
 
-    test.only("Visual Image Testing Visual Comparision", async ({page})=>{
+    test("Visual Image Testing Visual Comparision", async ({page})=>{
     
         await page.goto("https://www.google.com/")
     
