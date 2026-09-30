@@ -25,3 +25,10 @@ test("Handling Broser Navigations", async ({page})=>{
 }
 
 )
+
+    test("Navigate to Automation Practice", async ({ page }) => {
+        await page.goto("https://rahulshettyacademy.com/AutomationPractice/")
+
+        await expect(page).toHaveURL("https://rahulshettyacademy.com/AutomationPractice/")
+        await expect(page.getByText("Dropdown Example")).toBeVisible()
+    })
